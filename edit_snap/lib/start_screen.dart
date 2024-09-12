@@ -1,3 +1,5 @@
+import 'package:edit_snap/image_select_screen.dart';
+import 'package:edit_snap/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
@@ -5,22 +7,29 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = L10n.of(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Edit Snap'),
+        title: Text(l10n.startScreenTitle),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'こんにちは！\n今日は${DateTime.now()}です。',
+              l10n.helloWorldOn(DateTime.now()),
               textAlign: TextAlign.center,
             ),
             ElevatedButton(
-              onPressed: () {},
-              child: const Text('開始する'),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const ImageSelectScreen(),
+                  ),
+                );
+              },
+              child: Text(l10n.start),
             )
           ],
         ),
