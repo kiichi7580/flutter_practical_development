@@ -45,5 +45,13 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<!-- App Storeでの言語表示設定 -->
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>ja</string>
+	</array>
+	<!-- 画像ライブラリにアクセスのするための設定 -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>編集する画像を選択します。</string>
 </dict>
 </plist>
