@@ -25,7 +25,6 @@ class _ImageEditScreenState extends State<ImageEditScreen> {
 
   void _rotateImage() {
     final image = image_lib.decodeImage(_imageBitmap);
-    print('1: $image');
     if (image == null) return;
 
     final rotateImage = image_lib.copyRotate(image, angle: 90);
@@ -37,7 +36,6 @@ class _ImageEditScreenState extends State<ImageEditScreen> {
 
   void _flipImage() {
     final image = image_lib.decodeImage(_imageBitmap);
-    print('2: $image');
     if (image == null) return;
 
     final flipImage = image_lib.copyFlip(
